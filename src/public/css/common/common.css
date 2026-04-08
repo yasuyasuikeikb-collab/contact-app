@@ -1,0 +1,26 @@
+body {
+  background-color: #ffffff;
+  color: #333333;
+  font-family: 'Inika', 'Noto Sans JP', serif, sans-serif;
+}
+
+.site-header {
+  border-bottom: 1px solid #e0dfde;
+  background-color: #ffffff;
+}
+
+.site-header__inner {
+  position: relative;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.site-header__logo {
+  display: block;
+  color: #8b7969;
+  font-size: 40px;
+  font-family: serif;
+  text-align: center;
+  text-decoration: none;
+}

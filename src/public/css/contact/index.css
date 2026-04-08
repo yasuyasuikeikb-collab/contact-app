@@ -1,0 +1,80 @@
+.contact {
+  padding: 48px 16px 80px;
+}
+
+.contact__inner {
+  max-width: 972px;
+  margin: 0 auto;
+}
+
+.contact__title {
+  margin: 0 0 48px;
+  color: #8b7969;
+  font-size: 35px;
+  font-family: serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+.contact-form__row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.contact-form__label-wrap {
+  width: 36%;
+  padding-top: 14px;
+}
+
+.contact-form__field {
+  width: 64%;
+}
+
+.contact-form__label {
+  color: #8b7969;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.contact-form__required {
+  margin-left: 4px;
+  color: #ff9494;
+}
+
+.contact-form__field--split {
+  display: flex;
+  gap: 24px;
+}
+
+.contact-form__field--radio {
+  display: flex;
+  gap: 40px;
+  padding-top: 10px;
+}
+
+.contact-form__field--tel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-form__input,
+.contact-form__select,
+.contact-form__textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid transparent;
+  background-color: #f4f4f4;
+  color: #8b7969;
+  font-size: 14px;
+}
+
+.contact-form__input::placeholder,
+.contact-form__textarea::placeholder {
+  color: #beb1a6;
+}
+
+.contact-form__input--name {
+  width: calc(50% - 12px);
+}
