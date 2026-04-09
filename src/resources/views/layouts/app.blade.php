@@ -13,7 +13,7 @@
 <body>
     <header class="site-header">
         <div class="site-header__inner">
-            <a class="site-header__logo" href="#">FashionablyLate</a>
+            <a class="site-header__logo" href="/">FashionablyLate</a>
         </div>
     </header>
 
