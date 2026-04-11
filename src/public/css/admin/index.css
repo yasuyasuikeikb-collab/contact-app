@@ -4,7 +4,7 @@
 }
 
 .admin-page__inner {
-  max-width: 1180px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 0 16px;
 }
@@ -15,49 +15,50 @@
   font-family: "Inika", serif;
   font-size: 28px;
   font-weight: 400;
-  line-height: 1;
   text-align: center;
 }
 
+/* ===== 検索エリア ===== */
 .admin-search {
-  margin-bottom: 18px;
+  max-width: 1080px;
+  margin: 0 auto 18px;
 }
 
 .admin-search__form {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 40px;
   margin-bottom: 14px;
 }
 
 .admin-search__group--keyword {
-  width: 318px;
+  width: 300px;
 }
 
 .admin-search__group--gender {
-  width: 92px;
+  width: 90px;
 }
 
 .admin-search__group--category {
-  width: 206px;
+  width: 200px;
 }
 
 .admin-search__group--date {
-  width: 138px;
+  width: 140px;
 }
 
 .admin-search__input,
 .admin-search__select,
 .admin-search__date {
   width: 100%;
-  height: 38px;
-  padding: 0 12px;
+  height: 36px;
+  padding: 0 10px;
   border: none;
   background-color: #f4f4f4;
-  box-sizing: border-box;
   color: #8b7969;
-  font-size: 13px;
+  font-size: 12px;
   outline: none;
+  box-sizing: border-box;
 }
 
 .admin-search__input::placeholder {
@@ -70,7 +71,7 @@
 }
 
 .admin-search__select {
-  padding-right: 34px;
+  padding-right: 30px;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -82,13 +83,11 @@
   content: "";
   position: absolute;
   top: 50%;
-  right: 12px;
-  width: 0;
-  height: 0;
-  border-top: 7px solid #bba99a;
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent;
-  transform: translateY(-28%);
+  right: 10px;
+  border-top: 6px solid #bba99a;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  transform: translateY(-30%);
   pointer-events: none;
 }
 
@@ -101,13 +100,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 88px;
-  height: 38px;
+  min-width: 80px;
+  height: 36px;
   border: none;
-  text-decoration: none;
-  font-size: 13px;
-  line-height: 1;
+  font-size: 12px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .admin-search__button--search {
@@ -122,21 +120,20 @@
 
 .admin-search__sub-content {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .admin-search__export-button {
+  min-width: 120px;
+  height: 34px;
+  background-color: #ede7e2;
+  color: #8b7969;
+  font-size: 12px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 136px;
-  height: 36px;
-  background-color: #ede7e2;
-  color: #8b7969;
-  font-size: 13px;
-  line-height: 1;
   text-decoration: none;
 }
 
@@ -151,23 +148,23 @@
 }
 
 .admin-pagination__item {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 30px;
-  height: 30px;
+  min-width: 28px;
+  height: 28px;
   margin-left: -1px;
   border: 1px solid #e0dfde;
   background-color: #ffffff;
   color: #8b7969;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   box-sizing: border-box;
 }
 
 .admin-pagination__item--arrow {
-  min-width: 30px;
+  min-width: 28px;
 }
 
 .admin-pagination__item--current {
@@ -181,7 +178,10 @@
   background-color: #ffffff;
 }
 
+/* ===== テーブル ===== */
 .admin-table {
+  max-width: 1080px;
+  margin: 0 auto;
   width: 100%;
 }
 
@@ -189,6 +189,22 @@
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
+}
+
+.admin-table__row--head {
+  background-color: #8b7969;
+}
+
+.admin-table__header {
+  padding: 10px 14px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.admin-table__header--button {
+  width: 100px;
 }
 
 .admin-table__row {
@@ -199,29 +215,11 @@
   background-color: #faf8f6;
 }
 
-.admin-table__row--head {
-  background-color: #8b7969;
-}
-
-.admin-table__header {
-  padding: 12px 16px;
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.4;
-  text-align: left;
-}
-
-.admin-table__header--button {
-  width: 108px;
-}
-
 .admin-table__data {
-  padding: 14px 16px;
+  padding: 12px 14px;
+  font-size: 13px;
   color: #8b7969;
-  font-size: 14px;
   line-height: 1.5;
-  text-align: left;
   vertical-align: middle;
 }
 
@@ -230,13 +228,12 @@
 }
 
 .admin-table__detail-button {
-  min-width: 66px;
-  height: 30px;
+  min-width: 60px;
+  height: 28px;
   border: 1px solid #d9c6b5;
   background-color: #ffffff;
   color: #d9c6b5;
-  font-size: 13px;
-  line-height: 1;
+  font-size: 12px;
   cursor: pointer;
 }
 
