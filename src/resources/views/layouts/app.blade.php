@@ -13,17 +13,37 @@
 <body>
     <header class="site-header">
     <div class="site-header__inner">
-        <a class="site-header__logo" href="{{ route('contact.index') }}">FashionablyLate</a>
 
-        @if (request()->routeIs('register'))
-            <div class="site-header__nav">
-                <a class="site-header__nav-link" href="{{ route('login') }}">login</a>
-            </div>
-        @elseif (request()->routeIs('login'))
-            <div class="site-header__nav">
-                <a class="site-header__nav-link" href="{{ route('register') }}">register</a>
-            </div>
-        @endif
+        <a href="{{ route('contact.index') }}" class="site-header__logo">
+            FashionablyLate
+        </a>
+
+        <div class="site-header__nav">
+
+            {{-- 未ログイン --}}
+            @guest
+                @if (request()->routeIs('register'))
+                    <a href="{{ route('login') }}" class="site-header__button">
+                        login
+                    </a>
+                @elseif (request()->routeIs('login'))
+                    <a href="{{ route('register') }}" class="site-header__button">
+                        register
+                    </a>
+                @endif
+            @endguest
+
+            {{-- ログイン済み（管理者） --}}
+            @auth
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="site-header__button">
+                        logout
+                    </button>
+                </form>
+            @endauth
+
+        </div>
     </div>
 </header>
 
