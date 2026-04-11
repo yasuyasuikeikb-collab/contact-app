@@ -19,7 +19,9 @@ Route::post('/confirm', [ContactController::class, 'confirm'])->name('contact.co
 Route::post('/thanks', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/thanks', [ContactController::class, 'thanks'])->name('contact.thanks');
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-Route::get('/search', [AdminController::class, 'search'])->name('admin.search');
-Route::get('/reset', [AdminController::class, 'reset'])->name('admin.reset');
-Route::delete('/delete/{id}', [AdminController::class, 'destroy'])->name('admin.delete');
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/search', [AdminController::class, 'search'])->name('admin.search');
+    Route::get('/reset', [AdminController::class, 'reset'])->name('admin.reset');
+    Route::delete('/delete/{id}', [AdminController::class, 'destroy'])->name('admin.delete');
+});

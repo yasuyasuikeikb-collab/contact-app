@@ -2,77 +2,80 @@
 
 @section('title', 'Register')
 
-@push('styles')
-    <link rel="stylesheet" href="{{ asset('css/auth/register.css') }}">
-@endpush
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/auth/register.css') }}">
+@endsection
 
 @section('content')
-    <section class="auth auth--register">
-        <div class="auth__inner">
-            <h1 class="auth__title">Register</h1>
+<section class="register-page">
+    <div class="register-page__inner">
+        <h2 class="register-page__heading">Register</h2>
 
-            <div class="auth-card auth-card--register">
-                <form class="auth-form" method="POST">
-                    {{-- @csrf --}}
+        <div class="register-form-card">
+            <form class="register-form" action="{{ route('register') }}" method="post">
+                @csrf
 
-                    <div class="auth-form__group">
-                        <label class="auth-form__label" for="name">お名前</label>
+                <div class="register-form__group">
+                    <div class="register-form__label">
+                        <label for="name">お名前</label>
+                    </div>
+                    <div class="register-form__field">
                         <input
-                            class="auth-form__input"
-                            id="name"
+                            class="register-form__input"
                             type="text"
                             name="name"
-                            placeholder="例: 山田 太郎"
+                            id="name"
+                            value="{{ old('name') }}"
+                            placeholder="例: 山田　太郎"
                         >
-                        {{-- バリデーションエラーメッセージ --}}
-                        {{--
                         @error('name')
-                            <p class="auth-form__error">{{ $message }}</p>
+                            <p class="register-form__error">{{ $message }}</p>
                         @enderror
-                        --}}
                     </div>
+                </div>
 
-                    <div class="auth-form__group">
-                        <label class="auth-form__label" for="email">メールアドレス</label>
+                <div class="register-form__group">
+                    <div class="register-form__label">
+                        <label for="email">メールアドレス</label>
+                    </div>
+                    <div class="register-form__field">
                         <input
-                            class="auth-form__input"
-                            id="email"
+                            class="register-form__input"
                             type="email"
                             name="email"
+                            id="email"
+                            value="{{ old('email') }}"
                             placeholder="例: test@example.com"
                         >
-                        {{-- バリデーションエラーメッセージ --}}
-                        {{--
                         @error('email')
-                            <p class="auth-form__error">{{ $message }}</p>
+                            <p class="register-form__error">{{ $message }}</p>
                         @enderror
-                        --}}
                     </div>
+                </div>
 
-                    <div class="auth-form__group">
-                        <label class="auth-form__label" for="password">パスワード</label>
+                <div class="register-form__group">
+                    <div class="register-form__label">
+                        <label for="password">パスワード</label>
+                    </div>
+                    <div class="register-form__field">
                         <input
-                            class="auth-form__input"
-                            id="password"
+                            class="register-form__input"
                             type="password"
                             name="password"
+                            id="password"
                             placeholder="例: coachtech1106"
                         >
-                        {{-- バリデーションエラーメッセージ --}}
-                        {{--
                         @error('password')
-                            <p class="auth-form__error">{{ $message }}</p>
+                            <p class="register-form__error">{{ $message }}</p>
                         @enderror
-                        --}}
                     </div>
+                </div>
 
-                    <div class="auth-form__actions">
-                        <button class="button button--primary auth-form__submit" type="button">
-                            登録
-                        </button>
-                    </div>
-                </form>
-            </div>
+                <div class="register-form__actions">
+                    <button class="register-form__submit" type="submit">登録</button>
+                </div>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
 @endsection

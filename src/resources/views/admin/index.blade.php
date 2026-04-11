@@ -2,9 +2,9 @@
 
 @section('title', 'Admin')
 
-@push('styles')
-    <link rel="stylesheet" href="{{ asset('css/admin/index.css') }}">
-@endpush
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/admin/index.css') }}">
+@endsection
 
 @section('content')
 <section class="admin">

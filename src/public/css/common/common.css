@@ -1,7 +1,7 @@
 body {
   background-color: #ffffff;
   color: #333333;
-  font-family: 'Inika', 'Noto Sans JP', serif, sans-serif;
+  font-family: "Inika", "Noto Sans JP", serif, sans-serif;
 }
 
 .site-header {
@@ -20,8 +20,26 @@ body {
   display: block;
   color: #8b7969;
   font-size: 32px;
-  font-family: 'Inika', serif;
+  font-family: "Inika", serif;
   line-height: 1.2;
   text-align: center;
+  text-decoration: none;
+}
+
+.site-header__nav {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+}
+
+.site-header__nav-link {
+  display: inline-block;
+  padding: 6px 16px;
+  border: 1px solid #d9c6b5;
+  background-color: #f7f3ef;
+  color: #d9c6b5;
+  font-size: 14px;
+  line-height: 1;
   text-decoration: none;
 }

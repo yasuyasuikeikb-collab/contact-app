@@ -12,10 +12,20 @@
 
 <body>
     <header class="site-header">
-        <div class="site-header__inner">
-            <a class="site-header__logo" href="/">FashionablyLate</a>
-        </div>
-    </header>
+    <div class="site-header__inner">
+        <a class="site-header__logo" href="{{ route('contact.index') }}">FashionablyLate</a>
+
+        @if (request()->routeIs('register'))
+            <div class="site-header__nav">
+                <a class="site-header__nav-link" href="{{ route('login') }}">login</a>
+            </div>
+        @elseif (request()->routeIs('login'))
+            <div class="site-header__nav">
+                <a class="site-header__nav-link" href="{{ route('register') }}">register</a>
+            </div>
+        @endif
+    </div>
+</header>
 
     <main>
         @yield('content')
