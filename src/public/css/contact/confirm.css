@@ -1,78 +1,87 @@
-.confirm {
-  padding: 48px 16px 80px;
+.confirm-page {
+  padding: 30px 0 50px;
+  background-color: #ffffff;
 }
 
-.confirm__inner {
-  max-width: 972px;
+.confirm-page__inner {
+  max-width: 760px;
   margin: 0 auto;
+  padding: 0 16px;
 }
 
-.confirm__title {
-  margin: 0 0 48px;
+.confirm-page__heading {
+  margin: 0 0 28px;
   color: #8b7969;
-  font-size: 35px;
-  font-family: serif;
+  font-family: "Inika", serif;
+  font-size: 26px;
   font-weight: 400;
   text-align: center;
 }
 
 .confirm-table {
+  margin-bottom: 30px;
+}
+
+.confirm-table__inner {
   width: 100%;
   border-collapse: collapse;
+  border: 1px solid #e0dfde;
+  table-layout: fixed;
 }
 
 .confirm-table__header,
-.confirm-table__data {
+.confirm-table__text {
   border: 1px solid #e0dfde;
-  padding: 24px 32px;
-  color: #8b7969;
-  font-size: 16px;
-  vertical-align: middle;
+  padding: 14px 18px;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .confirm-table__header {
   width: 34%;
-  background-color: #baa899;
+  background-color: #b9a899;
   color: #ffffff;
   font-weight: 700;
-  text-align: left;
 }
 
-.confirm-table__data {
+.confirm-table__text {
   width: 66%;
   background-color: #ffffff;
+  color: #8b7969;
 }
 
-.confirm-table__data--textarea {
-  line-height: 1.8;
+.confirm-table__text--detail {
+  line-height: 1.7;
   white-space: pre-wrap;
 }
 
-.confirm-form__actions {
+.confirm-page__actions {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 32px;
-  margin-top: 40px;
+  align-items: center;
+  gap: 24px;
 }
 
-.button {
-  display: inline-block;
-  min-width: 120px;
-  padding: 12px 24px;
+.confirm-page__submit {
+  min-width: 100px;
+  height: 36px;
+  padding: 0 16px;
   border: none;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-}
-
-.button--primary {
   background-color: #82756a;
   color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-.button--link {
-  background-color: transparent;
+.confirm-page__submit:hover {
+  opacity: 0.9;
+}
+
+.confirm-page__back {
+  border: none;
+  background: transparent;
   color: #8b7969;
+  font-size: 14px;
   text-decoration: underline;
+  cursor: pointer;
 }

@@ -1,44 +1,60 @@
-.thanks {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(100vh - 80px);
-    overflow: hidden;
+body {
+  margin: 0;
+  background-color: #ffffff;
+  font-family: "Inika", "Noto Sans JP", serif, sans-serif;
 }
 
-.thanks__background-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: rgba(139, 121, 105, 0.05);
-    font-size: 180px;
-    font-family: serif;
-    white-space: nowrap;
-    pointer-events: none;
+.thanks-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #ffffff;
 }
 
-.thanks__inner {
-    position: relative;
-    z-index: 1;
-    text-align: center;
+.thanks-page__background-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -52%);
+  color: rgba(139, 121, 105, 0.05);
+  font-family: "Inika", serif;
+  font-size: 220px;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
 }
 
-.thanks__message {
-    margin: 0 0 32px;
-    color: #8b7969;
-    font-size: 30px;
-    font-weight: 700;
+.thanks-page__inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
 }
 
-.button {
-    display: inline-block;
-    min-width: 140px;
-    padding: 12px 24px;
-    border: none;
-    background-color: #82756a;
-    color: #ffffff;
-    text-decoration: none;
-    text-align: center;
+.thanks-page__message {
+  margin: 0 0 28px;
+  color: #8b7969;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.thanks-page__button {
+  display: inline-block;
+  min-width: 120px;
+  padding: 10px 20px;
+  background-color: #82756a;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.thanks-page__button:hover {
+  opacity: 0.9;
 }

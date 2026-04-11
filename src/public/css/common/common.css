@@ -11,16 +11,17 @@ body {
 
 .site-header__inner {
   position: relative;
-  max-width: 1380px;
+  max-width: 1230px;
   margin: 0 auto;
-  padding: 24px 16px;
+  padding: 16px 16px;
 }
 
 .site-header__logo {
   display: block;
   color: #8b7969;
-  font-size: 40px;
-  font-family: serif;
+  font-size: 32px;
+  font-family: 'Inika', serif;
+  line-height: 1.2;
   text-align: center;
   text-decoration: none;
 }

@@ -2,72 +2,79 @@
 
 @section('title', 'Confirm')
 
-@push('styles')
-    <link rel="stylesheet" href="{{ asset('css/contact/confirm.css') }}">
-@endpush
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/contact/confirm.css') }}">
+@endsection
 
 @section('content')
-    <section class="confirm">
-        <div class="confirm__inner">
-            <h1 class="confirm__title">Confirm</h1>
+<section class="confirm-page">
+    <div class="confirm-page__inner">
+        <h2 class="confirm-page__heading">Confirm</h2>
 
-            <form class="confirm-form" method="POST">
-                {{-- @csrf --}}
+        <div class="confirm-table">
+            <table class="confirm-table__inner">
+                <tr class="confirm-table__row">
+                    <th class="confirm-table__header">お名前</th>
+                    <td class="confirm-table__text">
+                        {{ $contact['last_name'] }} {{ $contact['first_name'] }}
+                    </td>
+                </tr>
 
-                <table class="confirm-table">
-                    <tr class="confirm-table__row">
-                        <th class="confirm-table__header">お名前</th>
-                        <td class="confirm-table__data">山田　太郎</td>
-                    </tr>
-                    <tr class="confirm-table__row">
-                        <th class="confirm-table__header">性別</th>
-                        <td class="confirm-table__data">男性</td>
-                    </tr>
-                    <tr class="confirm-table__row">
-                        <th class="confirm-table__header">メールアドレス</th>
-                        <td class="confirm-table__data">test@example.com</td>
-                    </tr>
-                    <tr class="confirm-table__row">
-                        <th class="confirm-table__header">電話番号</th>
-                        <td class="confirm-table__data">080-1234-5678</td>
-                    </tr>
-                    <tr class="confirm-table__row">
-                        <th class="confirm-table__header">住所</th>
-                        <td class="confirm-table__data">東京都渋谷区千駄ヶ谷1-2-3</td>
-                    </tr>
-                    <tr class="confirm-table__row">
-                        <th class="confirm-table__header">建物名</th>
-                        <td class="confirm-table__data">千駄ヶ谷マンション101</td>
-                    </tr>
-                    <tr class="confirm-table__row">
-                        <th class="confirm-table__header">お問い合わせの種類</th>
-                        <td class="confirm-table__data">商品の交換について</td>
-                    </tr>
-                    <tr class="confirm-table__row">
-                        <th class="confirm-table__header">お問い合わせ内容</th>
-                        <td class="confirm-table__data confirm-table__data--textarea">
-                            届いた商品のサイズを交換したいです。
-                        </td>
-                    </tr>
-                </table>
+                <tr class="confirm-table__row">
+                    <th class="confirm-table__header">性別</th>
+                    <td class="confirm-table__text">
+                        @if ($contact['gender'] == 1)
+                            男性
+                        @elseif ($contact['gender'] == 2)
+                            女性
+                        @else
+                            その他
+                        @endif
+                    </td>
+                </tr>
 
-                {{--
-                <input type="hidden" name="last_name" value="{{ $contact['last_name'] }}">
-                <input type="hidden" name="first_name" value="{{ $contact['first_name'] }}">
-                <input type="hidden" name="gender" value="{{ $contact['gender'] }}">
-                <input type="hidden" name="email" value="{{ $contact['email'] }}">
-                <input type="hidden" name="tel" value="{{ $contact['tel'] }}">
-                <input type="hidden" name="address" value="{{ $contact['address'] }}">
-                <input type="hidden" name="building" value="{{ $contact['building'] }}">
-                <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}">
-                <input type="hidden" name="content" value="{{ $contact['content'] }}">
-                --}}
+                <tr class="confirm-table__row">
+                    <th class="confirm-table__header">メールアドレス</th>
+                    <td class="confirm-table__text">{{ $contact['email'] }}</td>
+                </tr>
 
-                <div class="confirm-form__actions">
-                    <button class="button button--primary" type="button">送信</button>
-                    <button class="button button--link" type="button">修正</button>
-                </div>
-            </form>
+                <tr class="confirm-table__row">
+                    <th class="confirm-table__header">電話番号</th>
+                    <td class="confirm-table__text">{{ $contact['tel'] }}</td>
+                </tr>
+
+                <tr class="confirm-table__row">
+                    <th class="confirm-table__header">住所</th>
+                    <td class="confirm-table__text">{{ $contact['address'] }}</td>
+                </tr>
+
+                <tr class="confirm-table__row">
+                    <th class="confirm-table__header">建物名</th>
+                    <td class="confirm-table__text">{{ $contact['building'] }}</td>
+                </tr>
+
+                <tr class="confirm-table__row">
+                    <th class="confirm-table__header">お問い合わせの種類</th>
+                    <td class="confirm-table__text">{{ $category->content ?? '' }}</td>
+                </tr>
+
+                <tr class="confirm-table__row">
+                    <th class="confirm-table__header">お問い合わせ内容</th>
+                    <td class="confirm-table__text confirm-table__text--detail">
+                        {{ $contact['detail'] }}
+                    </td>
+                </tr>
+            </table>
         </div>
-    </section>
+
+        <div class="confirm-page__actions">
+            <form action="{{ route('contact.store') }}" method="post" class="confirm-page__form">
+                @csrf
+                <button class="confirm-page__submit" type="submit">送信</button>
+            </form>
+
+            <button class="confirm-page__back" type="button" onclick="history.back()">修正</button>
+        </div>
+    </div>
+</section>
 @endsection
