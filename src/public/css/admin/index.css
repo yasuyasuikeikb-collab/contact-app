@@ -118,6 +118,8 @@
   color: #ffffff;
 }
 
+
+/* ===== 下段 ===== */
 .admin-search__sub-content {
   display: flex;
   justify-content: space-between;
@@ -239,4 +241,143 @@
 
 .admin-table__detail-button:hover {
   background-color: #f8f5f2;
+}
+
+/* ===== モーダル ===== */
+
+.admin-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+}
+
+.admin-modal--open {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 60px;
+  /* ← 上位置そのまま */
+}
+
+.admin-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.18);
+}
+
+.admin-modal__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 640px;
+  height: 500px;
+  /* ← 下を詰めた */
+  padding: 72px 64px 32px;
+  /* ← 下余白も少なめ */
+  border: 1px solid #8b7969;
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* タイトル */
+.admin-modal__title {
+  position: absolute;
+  top: -26px;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  color: #8b7969;
+  font-size: 2rem;
+  /* 少し小さく */
+  font-weight: 400;
+  text-align: center;
+}
+
+/* 閉じるボタン */
+.admin-modal__close-button {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #8b7969;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #8b7969;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* 中身スクロール */
+.admin-modal__body {
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.admin-modal__body::-webkit-scrollbar {
+  display: none;
+}
+
+/* リスト */
+.admin-modal__detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  /* 少し詰めた */
+}
+
+.admin-modal__detail-item {
+  display: flex;
+}
+
+/* ラベル */
+.admin-modal__detail-term {
+  width: 130px;
+  flex-shrink: 0;
+  color: #8b7969;
+  font-size: 0.95rem;
+  /* 小さく */
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+/* 内容 */
+.admin-modal__detail-description {
+  flex: 1;
+  color: #8b7969;
+  font-size: 0.95rem;
+  /* 小さく */
+  line-height: 1.6;
+}
+
+/* 長文 */
+.admin-modal__detail-description--textarea {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* 削除ボタン */
+.admin-modal__delete-form {
+  margin-top: 24px;
+  /* 詰めた */
+  text-align: center;
+}
+
+.admin-modal__delete-button {
+  min-width: 64px;
+  height: 28px;
+  padding: 0 12px;
+  border: none;
+  background-color: #e60012;
+  color: #ffffff;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.is-fixed {
+  overflow: hidden;
 }
