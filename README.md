@@ -24,10 +24,25 @@ docker-compose up -d --build
 ```bash
 docker-compose exec php bash
 cd /var/www
-
 composer install
 cp .env.example .env
 php artisan key:generate
+```
+
+`.env` ファイルを作成後、以下のようにDB接続設定を確認してください。
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=laravel_user
+DB_PASSWORD=laravel_pass
+```
+
+その後、マイグレーションを実行してください。
+
+```bash
 php artisan migrate
 # 必要に応じて
 php artisan db:seed
@@ -68,9 +83,9 @@ php artisan db:seed
 ## 動作確認方法
 
 1. トップページにアクセス
-2. お問い合わせフォームに入力
-3. 送信ボタンを押下
-4. 管理画面にてデータが保存されていることを確認
+2. お問い合わせフォームに入力する
+3. 送信ボタンを押下する
+4. 管理画面にてデータが保存されていることを確認する
 
 ---
 
@@ -78,4 +93,4 @@ php artisan db:seed
 
 * Dockerがインストールされている必要があります
 * ポート80が使用されている場合は変更してください
-* 初回起動時はcomposer installに時間がかかる場合があります
+* 初回起動時は `composer install` に時間がかかる場合があります
