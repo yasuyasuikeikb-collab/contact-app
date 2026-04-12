@@ -76,8 +76,8 @@
                 </form>
 
                 <div class="admin-search__sub-content">
-                    <a class="admin-search__export-button" href="#">
-                        エクスポート
+                    <a class="admin-search__export-button" href="{{ route('admin.export', request()->query()) }}">
+                      エクスポート
                     </a>
 
                     <div class="admin-search__pagination">

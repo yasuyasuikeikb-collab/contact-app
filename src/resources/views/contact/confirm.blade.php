@@ -8,7 +8,7 @@
 
 @section('content')
 <section class="confirm-page">
-    <div class="confirm-page__inner">
+  <div class="confirm-page__inner">
         <h2 class="confirm-page__heading">Confirm</h2>
 
         <div class="confirm-table">

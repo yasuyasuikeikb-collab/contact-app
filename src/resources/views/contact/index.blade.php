@@ -11,7 +11,7 @@
     <div class="contact-page__inner">
         <h2 class="contact-page__heading">Contact</h2>
 
-        <form class="contact-form" action="{{ route('contact.confirm') }}" method="post">
+        <form class="contact-form" action="{{ route('contact.confirm') }}" method="post" novalidate>
             @csrf
 
             <div class="contact-form__row">
@@ -39,6 +39,7 @@
                                 class="contact-form__input"
                                 type="text"
                                 name="first_name"
+                                id="first_name"
                                 value="{{ old('first_name') }}"
                                 placeholder="例: 太郎"
                             >
@@ -158,15 +159,11 @@
                         </div>
                     </div>
 
-                    @error('tel1')
-                        <p class="contact-form__error">{{ $message }}</p>
-                    @enderror
-                    @error('tel2')
-                        <p class="contact-form__error">{{ $message }}</p>
-                    @enderror
-                    @error('tel3')
-                        <p class="contact-form__error">{{ $message }}</p>
-                    @enderror
+                    @if ($errors->has('tel1') || $errors->has('tel2') || $errors->has('tel3'))
+                        <p class="contact-form__error">
+                            {{ $errors->first('tel1') ?: ($errors->first('tel2') ?: $errors->first('tel3')) }}
+                        </p>
+                    @endif
                 </div>
             </div>
 
@@ -215,7 +212,6 @@
                             class="contact-form__select"
                             name="category_id"
                             id="category_id"
-                            required
                         >
                             <option value="" disabled {{ old('category_id') ? '' : 'selected' }} hidden>選択してください</option>
                             @foreach ($categories as $category)
