@@ -25,10 +25,9 @@
                             value="{{ old('email') }}"
                             placeholder="例: test@example.com"
                         >
-                        {{-- バリデーションエラーメッセージ --}}
-                        {{-- @error('email')
+                            @error('email')
                             <p class="auth-form__error">{{ $message }}</p>
-                        @enderror --}}
+                             @enderror
                     </div>
 
                     <div class="auth-form__group">
@@ -40,10 +39,9 @@
                             name="password"
                             placeholder="例: coachtech1106"
                         >
-                        {{-- バリデーションエラーメッセージ --}}
-                        {{-- @error('password')
+                             @error('password')
                             <p class="auth-form__error">{{ $message }}</p>
-                        @enderror --}}
+                              @enderror    
                     </div>
 
                     <div class="auth-form__actions">

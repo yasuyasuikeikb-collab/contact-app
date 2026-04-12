@@ -18,7 +18,7 @@
   text-align: center;
 }
 
-/* ===== 検索エリア ===== */
+/* ===== 検索 ===== */
 .admin-search {
   max-width: 1080px;
   margin: 0 auto 18px;
@@ -257,7 +257,6 @@
   align-items: flex-start;
   justify-content: center;
   padding-top: 60px;
-  /* ← 上位置そのまま */
 }
 
 .admin-modal__overlay {
@@ -272,16 +271,13 @@
   width: 100%;
   max-width: 640px;
   height: 500px;
-  /* ← 下を詰めた */
   padding: 72px 64px 32px;
-  /* ← 下余白も少なめ */
   border: 1px solid #8b7969;
   background-color: #ffffff;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   overflow: hidden;
 }
 
-/* タイトル */
 .admin-modal__title {
   position: absolute;
   top: -26px;
@@ -290,12 +286,10 @@
   margin: 0;
   color: #8b7969;
   font-size: 2rem;
-  /* 少し小さく */
   font-weight: 400;
   text-align: center;
 }
 
-/* 閉じるボタン */
 .admin-modal__close-button {
   position: absolute;
   top: 14px;
@@ -310,7 +304,6 @@
   cursor: pointer;
 }
 
-/* 中身スクロール */
 .admin-modal__body {
   height: 100%;
   overflow-y: auto;
@@ -322,48 +315,39 @@
   display: none;
 }
 
-/* リスト */
 .admin-modal__detail-list {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  /* 少し詰めた */
 }
 
 .admin-modal__detail-item {
   display: flex;
 }
 
-/* ラベル */
 .admin-modal__detail-term {
   width: 130px;
   flex-shrink: 0;
   color: #8b7969;
   font-size: 0.95rem;
-  /* 小さく */
   font-weight: 700;
   line-height: 1.6;
 }
 
-/* 内容 */
 .admin-modal__detail-description {
   flex: 1;
   color: #8b7969;
   font-size: 0.95rem;
-  /* 小さく */
   line-height: 1.6;
 }
 
-/* 長文 */
 .admin-modal__detail-description--textarea {
   white-space: pre-wrap;
   word-break: break-word;
 }
 
-/* 削除ボタン */
 .admin-modal__delete-form {
   margin-top: 24px;
-  /* 詰めた */
   text-align: center;
 }
 

@@ -71,3 +71,7 @@
   background-color: #82756a;
   color: #ffffff;
 }
+
+.auth-form__error {
+  color: #e60012;
+}
